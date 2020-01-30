@@ -1,11 +1,20 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 const Body = () =>{
+    const [body, setBody] = useState("")
+    const [bodyHeader, setBodyHeader] = useState("")
     return(
         <div>
-            <div><h3>Body Header</h3></div>
-            <hr/>
-            <div><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at ultricies neque, sit amet cursus leo. Sed vitae erat nulla. Vivamus viverra sapien ut suscipit consectetur. Aenean egestas nisl non odio vestibulum suscipit. Maecenas rhoncus sapien metus, et interdum sapien pellentesque quis. Nulla sagittis efficitur odio, sed hendrerit nibh auctor in. Nunc ultrices et nisi id laoreet.</p></div>
+            <form>    
+            <div>
+                <h3>Body Header:</h3>
+                <input name="bodyHeader" type="text" value={bodyHeader} onChange={e => {setBodyHeader(e.target.value)}} />
+            </div>
+            <div>
+                <h3>Body</h3>
+                <input name="body" type="text" value={body} onChange={e => {setBody(e.target.value)}} />
+            </div>
+            </form>
         </div>
     )
 }
